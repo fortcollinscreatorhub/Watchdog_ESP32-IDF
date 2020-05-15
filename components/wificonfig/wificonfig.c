@@ -1146,6 +1146,8 @@ esp_err_t get_nvs_wificonfig(nvs_handle_t my_handle) {
     return (last_err);
 }
 
+// Force return to wificonfig by clearing valid flag and restarting
+//
 void trigger_wificonfig () {
     ESP_LOGI(TAG, "in trigger_wificonifg");
 

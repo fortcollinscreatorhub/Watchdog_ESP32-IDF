@@ -571,7 +571,7 @@ static void switch_relay (int val, enum relay_source_t src) {
 }
 
 static void mqtt_event_handler(void* arg, esp_event_base_t event_base, int32_t event_id, void* event_data) {
-    ESP_LOGD(TAG, "mqtt_event_handler: Event dispatched from event loop base=%s, event_id=%d", event_base, event_id);
+    ESP_LOGI(TAG, "mqtt_event_handler: Event dispatched from event loop base=%s, event_id=%d", event_base, event_id);
 
     esp_mqtt_event_handle_t event = (esp_mqtt_event_handle_t) event_data;
     int msg_id;
@@ -585,6 +585,11 @@ static void mqtt_event_handler(void* arg, esp_event_base_t event_base, int32_t e
             sprintf (full_topic, "cmnd/%s/POWER", wificonfig_vals_mqtt.topic);
             msg_id = esp_mqtt_client_subscribe (mqtt_client, full_topic, 1);
             ESP_LOGI(TAG, "sent subscribe successful, msg_id=%d", msg_id);
+            break;
+
+        case MQTT_EVENT_DISCONNECTED:
+            ESP_LOGI(TAG, "MQTT_EVENT_DISCONNECTED");
+            mqtt_connected = false;
             break;
 
         case MQTT_EVENT_SUBSCRIBED:
@@ -605,7 +610,7 @@ static void mqtt_event_handler(void* arg, esp_event_base_t event_base, int32_t e
             break;
 
         default:
-            ESP_LOGD(TAG, "Other event id:%d", event_id);
+            ESP_LOGI(TAG, "Other event id:%d", event_id);
             break;
     }
 }
@@ -632,19 +637,25 @@ static void initialize_mqtt () {
     };
 
     // wait for Wifi connection
+    ESP_LOGI(TAG, "initialize_mqtt: Waiting for wifi to go up");
     while ((xEventGroupGetBits (wifi_event_group) & CONNECTED_BIT) == 0) {
         vTaskDelay(100 / portTICK_RATE_MS);
     }
+    ESP_LOGI(TAG, "initialize_mqtt: Wifi is up");
 
 
+    vTaskDelay(1000 / portTICK_RATE_MS);
+    //ESP_LOGI(TAG, "initialize_mqtt: Calling esp_mqtt_client_init");
     mqtt_client = esp_mqtt_client_init (&mqtt_cfg);
     if (mqtt_client != NULL) {
+        //ESP_LOGI(TAG, "initialize_mqtt: Calling esp_mqtt_client_register_event");
         esp_mqtt_client_register_event (mqtt_client, ESP_EVENT_ANY_ID, mqtt_event_handler, mqtt_client);
+        ESP_LOGI(TAG, "initialize_mqtt: Calling esp_mqtt_client_start");
         if (esp_mqtt_client_start (mqtt_client) != ESP_OK) {
-            ESP_LOGE(TAG, "Unable to start MQTT client");
+            ESP_LOGE(TAG, "initialize_mqtt: Unable to start MQTT client");
         }
     } else {
-        ESP_LOGE(TAG, "Unable to initialize MQTT client");
+        ESP_LOGE(TAG, "initialize_mqtt: Unable to initialize MQTT client");
     }
 }
 
