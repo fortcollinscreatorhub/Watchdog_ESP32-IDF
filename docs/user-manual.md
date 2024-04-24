@@ -41,6 +41,10 @@ done, press the red button to cancel the request. Your request will also be
 automatically cancelled after 1 hour; simply press the green button again if
 you need air for longer.
 
+The buttons _only_ request or cancel the local request for air. They do not
+effect, override, or cancel any request from the automation system. There is
+no way to locally force the compressor to turn off, or to reset alarms.
+
 ### Top Status LEDs
 
 Blue LED (Controller power):
@@ -131,10 +135,51 @@ the controller will turn on the compressor again. This could be by:
 * Pressing the request button on the control panel. Again, this will only be
   registered if it happens after the alarm condition is cancelled.
 
-## Implementation Details
+## Configuration
 
-TODO
+### Background
 
-## Configuration Parameters
+The controller software has many configuration option, such as:
+* WiFi parameters.
+* MQTT parameters.
+* Current sensor configuration.
+* Alarm configuration.
 
-TODO
+These values are not baked into the software. Rather, they're stored in flash
+or EEPROM on the device. These values can be edited using a web browser when
+the device is in "wificonfig" mode.
+
+### Current Values
+
+The alarm-related configuration values are currently:
+
+* Max time: 20 (minutes).
+* Duty Cycle: 50 (%).
+* Duty Cycle Window: 60 (minutes).
+* Alarm Cooldown (auto-reset time): 30 (minutes).
+* On-Button Timeout: 60 (minutes).
+* On-MQTT Timeout: 10 (minutes).
+
+### Wificonfig Mode
+
+IMPORTANT: Do not disassemble or reconfigure the compressor controller without
+prior approval from a quorum of the FCCH board.
+
+The controller will enter wificonfig mode when it's first powered on if the
+configuration data is missing WiFi connection information.
+
+Otherwise, to enter wificonfig mode, press the GPIO0 button on the
+controller circuit board for over 30 seconds, then release it. The device
+will start a WiFi access point, probably with SSID of "ESP". Connect to
+this using a phone or computer. Once connected, open http://192.168.4.1/
+using a web-browser. Make sure to save your changed before rebooting. When
+the reboot button is clicked, the device wil reboot and enter regular
+operation.
+
+To access the GPIO 0 button, you will need to open the controller box. The
+buttons are on the under-side of the PCB, i.e. between the PCB and the box
+panel. You can use a _non-metallic_ (e.g. plastic) stick/spatula/similar to
+slide under the PCB and press the button; this is by far the simplest. Or in
+the worst case, unscrew the PCB from the box panel.
+
+![PCB buttons](pcb-buttons.png)

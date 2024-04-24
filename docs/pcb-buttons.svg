@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="101.6mm"
+   height="101.6mm"
+   viewBox="0 0 101.6 101.6"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3 (0e150ed, 2023-07-21)"
+   sodipodi:docname="pcb-buttons.svg"
+   inkscape:export-filename="pcb-buttons.png"
+   inkscape:export-xdpi="150"
+   inkscape:export-ydpi="150"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.4845598"
+     inkscape:cx="224.64572"
+     inkscape:cy="169.41049"
+     inkscape:window-width="1920"
+     inkscape:window-height="1031"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     inkscape:export-bgcolor="#ffffffff" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-54.537071,-29.775831)">
+    <rect
+       style="vector-effect:non-scaling-stroke;fill:#c4c4c4;fill-opacity:1;stroke:#000000;stroke-width:0.192108;stroke-linejoin:round;stroke-opacity:1;-inkscape-stroke:hairline"
+       id="rect1"
+       width="101.6"
+       height="101.6"
+       x="54.537071"
+       y="29.775831"
+       rx="6.3499999" />
+    <rect
+       style="vector-effect:non-scaling-stroke;fill:#4040ff;fill-opacity:1;stroke:#000000;stroke-width:0.0679204;stroke-linejoin:round;stroke-opacity:1;-inkscape-stroke:hairline"
+       id="rect2"
+       width="25.4"
+       height="50.799999"
+       x="125.44542"
+       y="35.067497"
+       rx="3.175" />
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;font-family:'Nunito Sans 10pt';-inkscape-font-specification:'Nunito Sans 10pt';vector-effect:non-scaling-stroke;fill:#4040ff;fill-opacity:1;stroke:#000000;stroke-width:0.264583;stroke-linejoin:round;stroke-opacity:1;-inkscape-stroke:hairline"
+       x="59.428955"
+       y="127.78288"
+       id="text2"><tspan
+         sodipodi:role="line"
+         id="tspan2"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.175px;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="59.428955"
+         y="127.78288">Inside of box cover</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;font-family:'Nunito Sans 10pt';-inkscape-font-specification:'Nunito Sans 10pt';vector-effect:non-scaling-stroke;fill:#4040ff;fill-opacity:1;stroke:#000000;stroke-width:0.264583;stroke-linejoin:round;stroke-opacity:1;-inkscape-stroke:hairline"
+       x="128.7739"
+       y="83.00576"
+       id="text3"><tspan
+         sodipodi:role="line"
+         id="tspan3"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.175px;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="128.7739"
+         y="83.00576">Rear of PCB</tspan></text>
+    <rect
+       style="vector-effect:non-scaling-stroke;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-linejoin:round;stroke-opacity:1;-inkscape-stroke:hairline"
+       id="rect3"
+       width="2.54"
+       height="12.7"
+       x="127.56208"
+       y="39.941212" />
+    <rect
+       style="vector-effect:non-scaling-stroke;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.118325;stroke-linejoin:round;stroke-opacity:1;-inkscape-stroke:hairline"
+       id="rect4"
+       width="2.54"
+       height="2.54"
+       x="132.85376"
+       y="47.561211" />
+    <rect
+       style="vector-effect:non-scaling-stroke;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.118325;stroke-linejoin:round;stroke-opacity:1;-inkscape-stroke:hairline"
+       id="rect5"
+       width="2.54"
+       height="2.54"
+       x="132.85376"
+       y="55.181213" />
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;font-family:'Nunito Sans 10pt';-inkscape-font-specification:'Nunito Sans 10pt';vector-effect:non-scaling-stroke;fill:#4040ff;fill-opacity:1;stroke:#000000;stroke-width:0.264583;stroke-linejoin:round;stroke-opacity:1;-inkscape-stroke:hairline"
+       x="137.19879"
+       y="50.056252"
+       id="text7"><tspan
+         sodipodi:role="line"
+         id="tspan7"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.175px;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="137.19879"
+         y="50.056252">Reset</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;font-family:'Nunito Sans 10pt';-inkscape-font-specification:'Nunito Sans 10pt';vector-effect:non-scaling-stroke;fill:#4040ff;fill-opacity:1;stroke:#000000;stroke-width:0.264583;stroke-linejoin:round;stroke-opacity:1;-inkscape-stroke:hairline"
+       x="137.19879"
+       y="57.676254"
+       id="text8"><tspan
+         sodipodi:role="line"
+         id="tspan8"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.175px;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="137.19879"
+         y="57.676254">GPIO0</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;font-family:'Nunito Sans 10pt';-inkscape-font-specification:'Nunito Sans 10pt';vector-effect:non-scaling-stroke;fill:#4040ff;fill-opacity:1;stroke:#000000;stroke-width:0.264583;stroke-linejoin:round;stroke-opacity:1;-inkscape-stroke:hairline"
+       x="67.8536"
+       y="57.676254"
+       id="text9"><tspan
+         sodipodi:role="line"
+         id="tspan9"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.175px;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="67.8536"
+         y="57.676254">Easiest access from this side &gt;&gt;&gt;</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:2.54px;font-family:'Nunito Sans 10pt';-inkscape-font-specification:'Nunito Sans 10pt';vector-effect:non-scaling-stroke;fill:#4040ff;fill-opacity:1;stroke:#000000;stroke-width:0.264583;stroke-linejoin:round;stroke-opacity:1;-inkscape-stroke:hairline"
+       x="130.99297"
+       y="41.871017"
+       id="text10"><tspan
+         sodipodi:role="line"
+         id="tspan10"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.54px;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="130.99297"
+         y="41.871017">Serial conn.</tspan></text>
+  </g>
+</svg>
