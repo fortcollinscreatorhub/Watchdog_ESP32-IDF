@@ -1,76 +1,52 @@
 # Development Instructions
 
+## Docker setup
+
+```shell
+sudo apt update
+sudo apt -y install docker.io
+sudo usermod --groups docker --append $(id -u -n)
+```
+
+Now log out and in again to ensure you're a member of the `docker` group.
+
+## Building
+
 These instructions should work on any system that has a recent verion of
 Docker installed. For example, native Ubuntu Linux 22.04, or Ubuntu Linux
 under WSL (Windows Subsystem for Linux).
 
-# Create a development container
+Espressif publishes Docker images containing IDF, so you no longer need to
+install IDF locally. `build.sh` will download the relevant Docker image, run
+`idf.py` as required, etc.
 
-TODO: Creation of the container should be done via a Dockerfile.
+Note that `build.sh` bind-mounts your home directory and the source code from
+your host into the (ephemeral) Docker container. Files will be saved in
+`~/.cache/Espressif`, `~/.ccache` and perhaps other directories.
 
-Note: Older versions of ESP-IDF only work on older versions of Ubuntu. I
-haven't experimented fully to find the newest Ubuntu that is supported by
-the various versions of ESP-IDF that I've tried.
-
-Note: The commands below use ESP-IDF v4.1.4. v4.2.5 also works. v4.3.7 and
-v4.4.7 have problems with pip package versions during the install phase.
+### Build
 
 ```shell
-apt update
-apt -y install docker.io
-# You may need to edit Docker configuration to allow your user to use Docker,
-# and then log out and back in.
-docker container run -itd --name build-fcch-compressor --entrypoint bash ubuntu:18.04
-docker exec -it build-fcch-compressor bash
-apt update
-apt -y install \
-    build-essential \
-    cmake \
-    git \
-    libusb-1.0-0 \
-    python3 python3-pip python3-setuptools \
-    #
-mkdir -p ~/git_wa/
-git clone --recursive -b v4.1.4 https://github.com/espressif/esp-idf.git ~/git_wa/esp-idf-v4.1.4
-~/git_wa/esp-idf-v4.1.4/install.sh esp32
+./build.sh
 ```
 
-# Get a shell prompt inside the development container
-
-TODO: an ephemeral container should be launched just to run the build, rather
-than creating a long-running container that the user configures and runs
-commands within.
+### Clean
 
 ```shell
-docker start build-fcch-compressor bash
-docker exec -it build-fcch-compressor bash
+./build.sh idf.py fullclean
 ```
 
-# Clone the source code for this project
-
-TODO: This should be done on the host, not in the container, and the files 
-mounted into the container during the build...
+### Enter Docker Container for Experimentation
 
 ```shell
-git clone https://github.com/fortcollinscreatorhub/Watchdog_ESP32-IDF.git ~/git_wa/FCCH-compressor-controller
+./build.sh bash
 ```
 
-# Compile the project
+## Flashing
+
+Replace `/dev/ttyUSB0` with the relevant port on your host:
 
 ```shell
-. ~/git_wa/esp-idf-v4.1.4/export.sh
-cd ~/git_wa/FCCH-compressor-controller
-idf.py build
-```
-
-The result will be: `build/Watchdog_ESP32-IDF.bin`.
-
-# Destroy the container
-
-Only do this if you aren't going to create another build. If you destroy the
-container, you will need to run all the setup steps again.
-
-```shell
-docker stop build-fcch-compressor
-docker rm build-fcch-compressor
+sudo chmod 666 /dev/ttyUSB0
+./build.sh idf.py -p /dev/ttyUSB0 flash
 ```
