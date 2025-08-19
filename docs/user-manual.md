@@ -42,7 +42,7 @@ automatically cancelled after 1 hour; simply press the green button again if
 you need air for longer.
 
 The buttons _only_ request or cancel the local request for air. They do not
-effect, override, or cancel any request from the automation system. There is
+affect, override, or cancel any request from the automation system. There is
 no way to locally force the compressor to turn off, or to reset alarms.
 
 ### Top Status LEDs
@@ -56,9 +56,9 @@ Yellow LED (Connected):
 * On: WiFi & MQTT both connected.
 
 Green LED (Access):
-* Off: Compressor power is off, valve should be open.
+* Off: Compressor power is off, valve should be closed.
 * Flashing: Alarm: Flash count is alarm type.
-* On: Compressor power is on, valve should be closed.
+* On: Compressor power is on, valve should be open.
 
 Alarm flash counts:
 2: Max runtime exceeded.
@@ -66,7 +66,7 @@ Alarm flash counts:
 4: Max and duty cycle exceeded.
 
 Orange LED (Sense):
-* Off: Compressor motor running.
+* Off: Compressor motor NOT running.
 * On: Compressor motor running.
 
 ### Bottom Status LEDs
@@ -124,14 +124,14 @@ capabilities.
 ### Cancelling an Alarm
 
 The controller automatically cancels all alarms after a configurable cooldown
-period following the most recent time any alarm was triggered. There is not way
+period following the most recent time any alarm was triggered. There is no way
 for a user to override this; you must simply wait for the cooldown period.
 
 Once the alarm condition has been cancelled, a new request must be made before
 the controller will turn on the compressor again. This could be by:
 
-* Placing an RFID onto a piece of equipment. Note that this must be a fresh
-  read of the RFID; simply leaving the RFID on the equipment is not enough.
+* Placing an RFID onto a piece of equipment. For some equipment, this must be a fresh
+  read of the RFID; simply leaving the RFID on the equipment might not be enough.
 * Pressing the request button on the control panel. Again, this will only be
   registered if it happens after the alarm condition is cancelled.
 
