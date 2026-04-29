@@ -7,6 +7,10 @@ duty cycle and max-time constraints.
 
 See the [User Manual](docs/user-manual.md) for documentation.
 
+# Hardware
+
+See the [hardware notes](docs/hardware-notes.md) for information re: hardware.
+
 # Development
 
 See the [developer guide](docs/README-dev.md) for information re: how to build the software.
